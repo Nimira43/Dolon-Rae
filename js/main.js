@@ -50,10 +50,19 @@ const player = new Player({
   y: 0
 })
 
+const background = new Sprite({
+  position: {
+    x: 0,
+    y: 0
+  },
+  imageSrc: '../images/screen/background.png'
+})
+
 function animate() {
   window.requestAnimationFrame(animate)
   ctx.fillStyle = '#fff'
   ctx.fillRect(0, 0, canvas.width, canvas.height)  
+  background.update()
   player.update()
   player.velocity.x = 0
   if (keys.p.pressed) player.velocity.x = 5
