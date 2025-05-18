@@ -16,7 +16,10 @@ class Player {
   update() {
     this.draw()
     this.position.x += this.velocity.x   
+    this.applyGravity()
+  }
+  applyGravity() {
     this.position.y += this.velocity.y   
-    this.velocity.y += gravity  
+    this.velocity.y += gravity
   }
 }
