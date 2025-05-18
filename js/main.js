@@ -52,7 +52,7 @@ const gravity = 0.5
 
 const player = new Player({
   position: {
-    x: 500,
+    x: 100,
     y: 0
   },
   collisionBlocks,
@@ -75,12 +75,16 @@ function animate() {
   ctx.scale(4, 4)
   ctx.translate(0, -background.image.height + scaledCanvas.height)
   background.update()
+
   collisionBlocks.forEach((collisionBlock) => collisionBlock.update())
+  
   platformCollisionBlocks.forEach((block) => block.update())
+  
   player.update()
   player.velocity.x = 0
   if (keys.p.pressed) player.velocity.x = 5
   if (keys.o.pressed) player.velocity.x = -5
+  
   ctx.restore() 
     
 }
