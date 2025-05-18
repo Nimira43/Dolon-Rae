@@ -27,7 +27,26 @@ floorCollisions2D.forEach((row, y) => {
     }
   })
 })
-console.log(collisionBlocks)
+
+const platformCollisions2D = []
+for (let i = 0; i < platformCollisions.length; i += 36) {
+  platformCollisions2D.push(platformCollisions.slice(i, i + 36))
+}
+const platformCollisionBlocks = []
+platformCollisions2D.forEach((row, y) => {
+  row.forEach((symbol, x) => {
+    if (symbol === 202) {
+      platformCollisionBlocks.push(
+        new CollisionBlock({
+          position: {
+            x: x * 16,
+            y: y * 16,
+          }
+        }
+      ))
+    }
+  })
+})
 
 const gravity = 0.5
 const player = new Player({
@@ -48,10 +67,11 @@ function animate() {
   ctx.fillRect(0, 0, canvas.width, canvas.height)  
 
   ctx.save()
-  ctx.scale(4, 4)
-  ctx.translate(0, -background.image.height + scaledCanvas.height)
+  // ctx.scale(4, 4)
+  // ctx.translate(0, -background.image.height + scaledCanvas.height)
   background.update()
   collisionBlocks.forEach((collisionBlocks) => collisionBlocks.update())
+  platformCollisionBlocks.forEach((platformCollisionBlocks) => platformCollisionBlocks.update())
   ctx.restore() 
   
   
