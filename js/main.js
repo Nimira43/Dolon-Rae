@@ -50,8 +50,11 @@ platformCollisions2D.forEach((row, y) => {
 
 const gravity = 0.5
 const player = new Player({
-  x: 0,
-  y: 0
+  position: {
+    x: 500,
+    y: 0
+  }
+  
 })
 const background = new Sprite({
   position: {
@@ -67,8 +70,8 @@ function animate() {
   ctx.fillRect(0, 0, canvas.width, canvas.height)  
 
   ctx.save()
-  // ctx.scale(4, 4)
-  // ctx.translate(0, -background.image.height + scaledCanvas.height)
+  ctx.scale(4, 4)
+  ctx.translate(0, -background.image.height + scaledCanvas.height)
   background.update()
   collisionBlocks.forEach((collisionBlocks) => collisionBlocks.update())
   platformCollisionBlocks.forEach((platformCollisionBlocks) => platformCollisionBlocks.update())
