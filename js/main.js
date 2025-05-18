@@ -56,6 +56,7 @@ const player = new Player({
     y: 0
   },
   collisionBlocks,
+  imageSrc: '../images/warrior/Idle.png'
 })
 
 const background = new Sprite({
