@@ -7,7 +7,7 @@ const scaledCanvas = {
   width: canvas.width / 4,
   height: canvas.height / 4
 }
-const gravity = 0.5
+
 
 const floorCollisions2D = []
 for (let i = 0; i < floorCollisions.length; i += 36) {
@@ -21,11 +21,11 @@ floorCollisions2D.forEach((row) => {
   })
 })
 
+const gravity = 0.5
 const player = new Player({
   x: 0,
   y: 0
 })
-
 const background = new Sprite({
   position: {
     x: 0,
