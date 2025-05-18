@@ -75,15 +75,14 @@ function animate() {
   ctx.scale(4, 4)
   ctx.translate(0, -background.image.height + scaledCanvas.height)
   background.update()
-  collisionBlocks.forEach((collisionBlocks) => collisionBlocks.update())
-  platformCollisionBlocks.forEach((platformCollisionBlocks) => platformCollisionBlocks.update())
-  ctx.restore() 
-  
-  
+  collisionBlocks.forEach((collisionBlock) => collisionBlock.update())
+  platformCollisionBlocks.forEach((block) => block.update())
   player.update()
   player.velocity.x = 0
   if (keys.p.pressed) player.velocity.x = 5
   if (keys.o.pressed) player.velocity.x = -5
+  ctx.restore() 
+    
 }
 
 const keys = {
