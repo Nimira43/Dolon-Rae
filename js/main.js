@@ -16,6 +16,7 @@ class Player {
     ctx.fillRect(this.position.x, this.position.y, 100, 100)
   }
   update() {
+    this.draw()
     this.position.y++    
   }
 }
@@ -26,7 +27,6 @@ function animate() {
   window.requestAnimationFrame(animate)
   ctx.fillStyle = '#fff'
   ctx.fillRect(0, 0, canvas.width, canvas.height)  
-  player.draw()
   player.update()
 }
 
