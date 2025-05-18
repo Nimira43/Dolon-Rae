@@ -40,6 +40,21 @@ function animate() {
   ctx.fillStyle = '#fff'
   ctx.fillRect(0, 0, canvas.width, canvas.height)  
   player.update()
+  player.velocity.x = 0
+  if (keys.p.pressed) player.velocity.x = 1
+  if (keys.o.pressed) player.velocity.x = -1
+}
+
+const keys = {
+  p: {
+    pressed: false
+  },
+  o: {
+    pressed: false
+  },
+  q: {
+    pressed: false
+  }
 }
 
 animate()
@@ -47,10 +62,24 @@ animate()
 window.addEventListener('keydown', (event) => {
   switch (event.key) {
     case 'p':
-      player.velocity.x = 1
-    break
+      keys.p.pressed = true
+      break
     case 'o':
-      player.velocity.x = -1
-    break
+      keys.o.pressed = true
+      break
+    case 'q':
+      player.velocity.y = -20    
+      break
+  }
+})
+
+window.addEventListener('keyup', (event) => {
+  switch (event.key) {
+    case 'p':
+      keys.p.pressed = false
+      break
+    case 'o':
+      keys.o.pressed = false
+      break
   }
 })
