@@ -37,4 +37,7 @@ class Sprite {
   update() {
     this.draw()
   }
+  updateFrames() {
+    
+  }
 }
