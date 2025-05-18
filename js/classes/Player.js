@@ -6,11 +6,8 @@ class Player extends Sprite {
       x: 0,
       y: 1
     }
-    this.width = 25
-    this.height = 25
     this.collisionBlocks = collisionBlocks
   }
-  
   update() {
     this.draw()
     this.position.x += this.velocity.x   
