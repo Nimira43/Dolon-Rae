@@ -1,3 +1,5 @@
+import { floorCollisions, platformCollisions } from '../js/data/collisions.js'
+
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
 canvas.width = 1024
@@ -7,6 +9,9 @@ const scaledCanvas = {
   height: canvas.height / 4
 }
 const gravity = 0.5
+
+console.log(floorCollisions)
+console.log(platformCollisions)
 
 class Sprite {
   constructor({ position, imageSrc }) {
