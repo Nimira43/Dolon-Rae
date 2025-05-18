@@ -16,8 +16,29 @@ class Player {
   update() {
     this.draw()
     this.position.x += this.velocity.x   
+    this.checkForHorizonalCollisions()
     this.applyGravity()
     this.checkForVerticalCollisions()
+  }
+  checkForHorizonalCollisions() {
+    for (let i = 0; i < this.collisionBlocks.length; i++) {
+      const collisionBlock = this.collisionBlocks[i]
+      if (
+        collision({
+          object1: this,
+          object2: collisionBlock
+        })
+      ) {
+        if (this.velocity.x > 0) {
+          this.velocity.x = 0
+          this.position.x = collisionBlock.position.x - this.width - 0.01
+        }
+        if (this.velocity.x < 0) {
+          this.velocity.x = 0
+          this.position.x = collisionBlock.position.x + collisionBlock.width + 0.01
+        }
+      }
+    }
   }
   applyGravity() {
     this.position.y += this.velocity.y   
