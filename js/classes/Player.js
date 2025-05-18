@@ -41,11 +41,11 @@ class Player extends Sprite {
   updateHitbox() {
     this.hitbox = {
       position: {
-        x: this.position.x,
-        y: this.position.y
+        x: this.position.x + 35,
+        y: this.position.y + 26
       },
-      width: 10,
-      height: 10
+      width: 14,
+      height: 27
     }
   }
   checkForHorizonalCollisions() {
