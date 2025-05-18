@@ -17,7 +17,7 @@ class Sprite {
         x: 0,
         y: 0
       },
-      width: this.image.width / 8,
+      width: this.image.width / this.frameRate,
       height: this.image.height 
     }
 
