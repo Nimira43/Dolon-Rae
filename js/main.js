@@ -8,15 +8,22 @@ const scaledCanvas = {
   height: canvas.height / 4
 }
 
-
 const floorCollisions2D = []
 for (let i = 0; i < floorCollisions.length; i += 36) {
   floorCollisions2D.push(floorCollisions.slice(i, i + 36))
 }
+const collisionBlocks = []
 floorCollisions2D.forEach((row) => {
   row.forEach((symbol) => {
     if (symbol === 202) {
-
+      collisionBlocks.push(
+        new CollisionBlock({
+          position: {
+            x: 0,
+            y: 0
+          }
+        }
+      ))
     }
   })
 })
