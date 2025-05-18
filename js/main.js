@@ -51,8 +51,9 @@ function animate() {
   ctx.scale(4, 4)
   ctx.translate(0, -background.image.height + scaledCanvas.height)
   background.update()
-  ctx.restore() 
   collisionBlocks.forEach((collisionBlocks) => collisionBlocks.update())
+  ctx.restore() 
+  
   
   player.update()
   player.velocity.x = 0
