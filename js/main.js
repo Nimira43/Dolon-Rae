@@ -41,8 +41,8 @@ function animate() {
   ctx.fillRect(0, 0, canvas.width, canvas.height)  
   player.update()
   player.velocity.x = 0
-  if (keys.p.pressed) player.velocity.x = 1
-  if (keys.o.pressed) player.velocity.x = -1
+  if (keys.p.pressed) player.velocity.x = 5
+  if (keys.o.pressed) player.velocity.x = -5
 }
 
 const keys = {
