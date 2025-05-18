@@ -1,4 +1,17 @@
 import { floorCollisions, platformCollisions } from '../js/data/collisions.js'
+console.log(platformCollisions)
+
+const floorCollisions2D = []
+for (let i = 0; i < floorCollisions.length; i += 36) {
+  floorCollisions2D.push(floorCollisions.slice(i, i + 36))
+}
+floorCollisions2D.forEach((row) => {
+  row.forEach((symbol) => {
+    if (symbol === 202) {
+      
+    }
+  })
+})
 
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
@@ -9,9 +22,6 @@ const scaledCanvas = {
   height: canvas.height / 4
 }
 const gravity = 0.5
-
-console.log(floorCollisions)
-console.log(platformCollisions)
 
 class Sprite {
   constructor({ position, imageSrc }) {
