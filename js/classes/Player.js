@@ -61,7 +61,10 @@ class Player extends Sprite {
       ) {
         if (this.velocity.x > 0) {
           this.velocity.x = 0
-          this.position.x = collisionBlock.position.x - this.width - 0.01
+
+          const offset = this.hitbox.position.x - this.position.x + this.hitbox.width
+
+          this.position.x = collisionBlock.position.x - offset - 0.01
           break
         }
         if (this.velocity.x < 0) {
