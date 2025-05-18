@@ -5,11 +5,8 @@ canvas.width = 1024
 canvas.height = 576
 
 class Player {
-  constructor() {
-    this.position = {
-      x: 0,
-      y: 0,
-    }
+  constructor(position) {
+    this.position = position 
   }
   draw() {
     ctx.fillStyle = '#ff4500'
@@ -21,7 +18,10 @@ class Player {
   }
 }
 
-const player = new Player()
+const player = new Player({
+  x: 0,
+  y: 0
+})
 
 function animate() {
   window.requestAnimationFrame(animate)
@@ -30,4 +30,4 @@ function animate() {
   player.update()
 }
 
-// animate()
+animate()
