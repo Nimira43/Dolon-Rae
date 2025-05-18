@@ -95,7 +95,10 @@ class Player extends Sprite {
         }
         if (this.velocity.y < 0) {
           this.velocity.y = 0
-          this.position.y = collisionBlock.position.y + collisionBlock.height + 0.01
+
+          const offset = this.hitbox.position.y - this.position.y
+
+          this.position.y = collisionBlock.position.y + collisionBlock.height - offset + 0.01
           break
         }
       }
