@@ -8,13 +8,14 @@ class Sprite {
     }
     this.image.src = imageSrc
     this.frameRate = frameRate
+    this.currentFrame = 0
   }
   draw() {
     if (!this.image) return
 
     const cropbox = {
       position: {
-        x: 0,
+        x: this.currentFrame * (this.image.width / this.frameRate),
         y: 0
       },
       width: this.image.width / this.frameRate,
