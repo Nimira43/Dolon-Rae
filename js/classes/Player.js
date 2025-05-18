@@ -33,6 +33,9 @@ class Player extends Sprite {
     this.applyGravity()
     this.checkForVerticalCollisions()
   }
+  updateHitbox() {
+    
+  }
   checkForHorizonalCollisions() {
     for (let i = 0; i < this.collisionBlocks.length; i++) {
       const collisionBlock = this.collisionBlocks[i]
