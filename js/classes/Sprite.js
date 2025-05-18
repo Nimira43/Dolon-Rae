@@ -3,9 +3,11 @@ class Sprite {
     position,
     imageSrc,
     frameRate = 1,
-    frameBuffer = 3
+    frameBuffer = 3,
+    scale = 1,
   }) {
     this.position = position
+    this.scale = scale
     this.image = new Image()
     this.image.onload = () => {
       this.width = this.image.width / this.frameRate
