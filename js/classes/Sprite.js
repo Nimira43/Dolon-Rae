@@ -10,6 +10,16 @@ class Sprite {
   }
   draw() {
     if (!this.image) return
+
+    const cropbox = {
+      position: {
+        x: 0,
+        y: 0
+      },
+      width: 0,
+      height: 0
+    }
+
     ctx.drawImage(this.image, this.position.x, this.position.y)
   }
   update() {
