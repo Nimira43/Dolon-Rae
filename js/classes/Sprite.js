@@ -1,5 +1,5 @@
 class Sprite {
-  constructor({ position, imageSrc, frameRate }) {
+  constructor({ position, imageSrc, frameRate = 1}) {
     this.position = position
     this.image = new Image()
     this.image.onload = () => {
