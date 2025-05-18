@@ -1,4 +1,4 @@
-export class Sprite {
+class Sprite {
   constructor({ position, imageSrc }) {
     this.position = position
     this.image = new Image()
