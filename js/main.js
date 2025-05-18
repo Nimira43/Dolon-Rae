@@ -13,20 +13,21 @@ for (let i = 0; i < floorCollisions.length; i += 36) {
   floorCollisions2D.push(floorCollisions.slice(i, i + 36))
 }
 const collisionBlocks = []
-floorCollisions2D.forEach((row) => {
-  row.forEach((symbol) => {
+floorCollisions2D.forEach((row, y) => {
+  row.forEach((symbol, x) => {
     if (symbol === 202) {
       collisionBlocks.push(
         new CollisionBlock({
           position: {
-            x: 0,
-            y: 0
+            x: x * 16,
+            y: y * 16,
           }
         }
       ))
     }
   })
 })
+console.log(collisionBlocks)
 
 const gravity = 0.5
 const player = new Player({
@@ -51,6 +52,7 @@ function animate() {
   ctx.translate(0, -background.image.height + scaledCanvas.height)
   background.update()
   ctx.restore() 
+  collisionBlocks.forEach((collisionBlocks) => collisionBlocks.update())
   
   player.update()
   player.velocity.x = 0
