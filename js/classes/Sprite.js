@@ -20,7 +20,15 @@ class Sprite {
       height: 0
     }
 
-    ctx.drawImage(this.image, this.position.x, this.position.y)
+    ctx.drawImage(
+      this.image,
+      cropbox.position.x,
+      cropbox.position.y,
+      cropbox.width,
+      cropbox.height,
+      this.position.x,
+      this.position.y
+    )
   }
   update() {
     this.draw()
