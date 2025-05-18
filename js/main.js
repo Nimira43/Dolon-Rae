@@ -4,15 +4,30 @@ const ctx = canvas.getContext('2d')
 canvas.width = 1024
 canvas.height = 576
 
-let y = 100
+class Player {
+  constructor() {
+    this.position = {
+      x: 0,
+      y: 0,
+    }
+  }
+  draw() {
+    ctx.fillStyle = '#ff4500'
+    ctx.fillRect(this.position.x, this.position.y, 100, 100)
+  }
+  update() {
+    this.position.y++    
+  }
+}
+
+const player = new Player()
 
 function animate() {
   window.requestAnimationFrame(animate)
   ctx.fillStyle = '#fff'
-  ctx.fillRect(0, 0, canvas.width, canvas.height)
-  ctx.fillStyle = '#ff4500'
-  ctx.fillRect(200, y, 100, 100)
-  y++
+  ctx.fillRect(0, 0, canvas.width, canvas.height)  
+  player.draw()
+  player.update()
 }
 
-animate()
+// animate()
