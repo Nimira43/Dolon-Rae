@@ -34,7 +34,7 @@ class Player {
       ) {
         if (this.velocity.y > 0) {
           this.velocity.y = 0
-          this.position.y = collisionBlock.position.y - this.height
+          this.position.y = collisionBlock.position.y - this.height - 0.01
         }
       }
     }
