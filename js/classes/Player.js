@@ -79,7 +79,7 @@ class Player extends Sprite {
       const collisionBlock = this.collisionBlocks[i]
       if (
         collision({
-          object1: this,
+          object1: this.hitbox,
           object2: collisionBlock
         })
       ) {
