@@ -17,9 +17,13 @@ class Player {
     this.draw()
     this.position.x += this.velocity.x   
     this.applyGravity()
+    this.checkForVerticalCollisions()
   }
   applyGravity() {
     this.position.y += this.velocity.y   
     this.velocity.y += gravity
+  }
+  checkForVerticalCollisions() {
+    
   }
 }
