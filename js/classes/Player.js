@@ -10,10 +10,7 @@ class Player extends Sprite {
     this.height = 25
     this.collisionBlocks = collisionBlocks
   }
-  draw() {
-    ctx.fillStyle = '#ff4500'
-    ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
-  }
+  
   update() {
     this.draw()
     this.position.x += this.velocity.x   
