@@ -112,7 +112,7 @@ window.addEventListener('keydown', (event) => {
       keys.o.pressed = true
       break
     case 'q':
-      player.velocity.y = -10    
+      player.velocity.y = -8    
       break
   }
 })
