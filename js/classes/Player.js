@@ -36,6 +36,7 @@ class Player extends Sprite {
     this.position.x += this.velocity.x   
     this.checkForHorizonalCollisions()
     this.applyGravity()
+    this.updateHitbox()
     this.checkForVerticalCollisions()
   }
   updateHitbox() {
