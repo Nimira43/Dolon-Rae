@@ -7,6 +7,10 @@ canvas.height = 576
 class Player {
   constructor(position) {
     this.position = position 
+    this.velocity = {
+      x: 0,
+      y: 1
+    }
   }
   draw() {
     ctx.fillStyle = '#ff4500'
@@ -30,4 +34,4 @@ function animate() {
   player.update()
 }
 
-animate()
+// animate()
