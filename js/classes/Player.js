@@ -32,7 +32,9 @@ class Player {
           object2: collisionBlock
         })
       ) {
-        console.log('Contact!!!')
+        if (this.velocity.y > 0) {
+          this.velocity.y = 0
+        }
       }
     }
   }
