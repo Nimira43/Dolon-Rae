@@ -9,6 +9,7 @@ class Player extends Sprite {
     this.collisionBlocks = collisionBlocks
   }
   update() {
+    this.updateFrames()
     ctx.fillStyle = 'rgba(0, 255, 0, 0.2)'
     ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
     this.draw()

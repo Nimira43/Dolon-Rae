@@ -36,8 +36,12 @@ class Sprite {
   }
   update() {
     this.draw()
+    this.updateFrames()
   }
   updateFrames() {
-    
+    if (this.currentFrame < this.frameRate - 1) {
+      this.currentFrame++
+    } else this.currentFrame = 0
+      
   }
 }
