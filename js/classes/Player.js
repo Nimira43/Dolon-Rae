@@ -5,12 +5,13 @@ class Player {
       x: 0,
       y: 1
     }
+    this.width = 100
     this.height = 100
     this.collisionBlocks = collisionBlocks
   }
   draw() {
     ctx.fillStyle = '#ff4500'
-    ctx.fillRect(this.position.x, this.position.y, 100, this.height)
+    ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
   }
   update() {
     this.draw()
