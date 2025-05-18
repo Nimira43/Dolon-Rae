@@ -27,10 +27,12 @@ class Player {
     for (let i = 0; i < this.collisionBlocks.length; i++) {
       const collisionBlock = this.collisionBlocks[i]
       if (
-        
-        
+        collision({
+          object1: this,
+          object2: collisionBlock
+        })
       ) {
-
+        console.log('Contact!!!')
       }
     }
   }
