@@ -49,13 +49,15 @@ platformCollisions2D.forEach((row, y) => {
 })
 
 const gravity = 0.5
+
 const player = new Player({
   position: {
     x: 500,
     y: 0
-  }
-  
+  },
+  collisionBlocks,
 })
+
 const background = new Sprite({
   position: {
     x: 0,

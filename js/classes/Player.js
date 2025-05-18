@@ -1,11 +1,12 @@
 class Player {
-  constructor({ position }) {
+  constructor({ position, collisionBlocks }) {
     this.position = position 
     this.velocity = {
       x: 0,
       y: 1
     }
     this.height = 100
+    this.collisionBlocks = collisionBlocks
   }
   draw() {
     ctx.fillStyle = '#ff4500'
