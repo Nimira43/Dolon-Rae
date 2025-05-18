@@ -9,7 +9,10 @@ class Player extends Sprite {
     this.collisionBlocks = collisionBlocks
   }
   update() {
+    ctx.fillStyle = 'rgba(0, 255, 0, 0.2)'
+    ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
     this.draw()
+
     this.position.x += this.velocity.x   
     this.checkForHorizonalCollisions()
     this.applyGravity()
