@@ -24,6 +24,15 @@ class Player {
     this.velocity.y += gravity
   }
   checkForVerticalCollisions() {
-    
+    for (let i = 0; i < this.collisionBlocks.length; i++) {
+      const collisionBlock = this.collisionBlocks[i]
+      if (
+        this.position.y + this.height >= collisionBlock.position.y &&
+        this.position.y <= collisionBlock.position.y + collisionBlock.height
+      
+      ) {
+
+      }
+    }
   }
 }
