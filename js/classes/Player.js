@@ -55,7 +55,7 @@ class Player extends Sprite {
       const collisionBlock = this.collisionBlocks[i]
       if (
         collision({
-          object1: this,
+          object1: this.hitbox,
           object2: collisionBlock
         })
       ) {
@@ -66,7 +66,10 @@ class Player extends Sprite {
         }
         if (this.velocity.x < 0) {
           this.velocity.x = 0
-          this.position.x = collisionBlock.position.x + collisionBlock.width + 0.01
+
+          const offset = this.hitbox.position.x - this.position.x
+          
+          this.position.x = collisionBlock.position.x + collisionBlock.width - offset + 0.01
           break
         }
       }
