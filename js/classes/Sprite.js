@@ -16,8 +16,8 @@ class Sprite {
         x: 0,
         y: 0
       },
-      width: 0,
-      height: 0
+      width: this.image.width / 8,
+      height: this.image.height 
     }
 
     ctx.drawImage(
@@ -27,7 +27,9 @@ class Sprite {
       cropbox.width,
       cropbox.height,
       this.position.x,
-      this.position.y
+      this.position.y,
+      this.width,
+      this.height
     )
   }
   update() {
