@@ -29,7 +29,7 @@ class Sprite {
       cropbox.height,
       this.position.x,
       this.position.y,
-      this.width,
+      this.width / this.frameRate,
       this.height
     )
   }
