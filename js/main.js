@@ -94,9 +94,14 @@ function animate() {
   
   player.update()
   player.velocity.x = 0
-  if (keys.p.pressed) player.velocity.x = 5
-  if (keys.o.pressed) player.velocity.x = -5
-  
+
+  if (keys.p.pressed) {
+    player.switchSprite('Run')
+    player.velocity.x = 5
+  } else if (keys.o.pressed) {
+    player.velocity.x = -5
+  } 
+
   ctx.restore() 
     
 }
