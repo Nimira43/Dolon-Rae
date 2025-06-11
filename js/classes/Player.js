@@ -23,6 +23,11 @@ class Player extends Sprite {
       height: 10
     }
     this.animations = animations
+    for (let key in this.animations) {
+      const image = new Image()
+      image.src = this.animations[key].imageSrc
+      this.animations[key].image = image
+    }
   }
   update() {
     this.updateFrames()
