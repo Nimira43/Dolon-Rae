@@ -99,9 +99,9 @@ function animate() {
 
   if (keys.p.pressed) {
     player.switchSprite('Run')
-    player.velocity.x = 5
+    player.velocity.x = 2
   } else if (keys.o.pressed) {
-    player.velocity.x = -5
+    player.velocity.x = -2
   } else if (player.velocity.y === 0) {
     player.switchSprite('Idle')
   }
