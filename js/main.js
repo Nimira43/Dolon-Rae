@@ -100,10 +100,10 @@ function animate() {
     player.velocity.x = 5
   } else if (keys.o.pressed) {
     player.velocity.x = -5
-  } 
-
-  ctx.restore() 
-    
+  } else if (player.velocity.y === 0) {
+    player.switchSprite('Idle')
+  }
+  ctx.restore()  
 }
 
 const keys = {
