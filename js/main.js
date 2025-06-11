@@ -62,12 +62,12 @@ const player = new Player({
     Idle: {
       imageSrc: '../images/warrior/Idle.png',
       frameRate: 8,
-      frameBuffer: 3,
+      frameBuffer: 3
     },
     Run: {
       imageSrc: '../images/warrior/Run.png',
       frameRate: 8,
-      frameBuffer: 7,
+      frameBuffer: 7
     }
   }
 })

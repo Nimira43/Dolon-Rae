@@ -32,7 +32,7 @@ class Player extends Sprite {
   switchSprite(key) {
     if (this.image === this.animations[key]) return
     this.image = this.animations[key].image
-    this.frameBuffer = this.animations[key].framebuffer
+    this.frameBuffer = this.animations[key].frameBuffer
     this.frameRate = this.animations[key].frameRate
   }
 
